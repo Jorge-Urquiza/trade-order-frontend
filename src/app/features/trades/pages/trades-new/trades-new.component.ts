@@ -30,9 +30,9 @@ export class TradesNewComponent implements OnDestroy {
   private readonly formBuilder = inject(FormBuilder);
 
   public readonly pairOptions: SelectOption<TradePair>[] = [
-    { label: 'BTCUSD', value: 'BTCUSD' },
-    { label: 'EURUSD', value: 'EURUSD' },
-    { label: 'ETHUSD', value: 'ETHUSD' },
+    { label: 'BTCUSD - 100150.4', value: 'BTCUSD' },
+    { label: 'EURUSD - 1.035', value: 'EURUSD' },
+    { label: 'ETHUSD - 3310', value: 'ETHUSD' },
   ];
 
   public readonly sideOptions: SelectOption<TradeSide>[] = [
