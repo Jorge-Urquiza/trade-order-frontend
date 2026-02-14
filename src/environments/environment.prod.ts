@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://demo-api.dev',
+  apiBaseUrl: 'https://trade-order-backend.onrender.com',
 };
