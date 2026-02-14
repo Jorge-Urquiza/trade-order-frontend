@@ -1,0 +1,18 @@
+.empty-cell {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.empty-state {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--text-color-secondary);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}

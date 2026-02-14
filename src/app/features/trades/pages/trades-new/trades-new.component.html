@@ -1,0 +1,97 @@
+<form class="p-fluid form-grid grid" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="field col-12 md:col-6">
+    <label for="pair">Pair</label>
+    <p-select
+      inputId="pair"
+      formControlName="pair"
+      [options]="pairOptions"
+      optionLabel="label"
+      optionValue="value"
+      [invalid]="isInvalid('pair')"
+      placeholder="Select pair"
+      [appendTo]="'body'"
+      class="w-full"
+    ></p-select>
+    <small class="p-error" *ngIf="isInvalid('pair')">{{ controlError('pair') }}</small>
+  </div>
+
+  <div class="field col-12 md:col-6">
+    <label for="side">Side</label>
+    <p-select
+      inputId="side"
+      formControlName="side"
+      [options]="sideOptions"
+      optionLabel="label"
+      optionValue="value"
+      [invalid]="isInvalid('side')"
+      placeholder="Select side"
+      [appendTo]="'body'"
+      class="w-full"
+    ></p-select>
+    <small class="p-error" *ngIf="isInvalid('side')">{{ controlError('side') }}</small>
+  </div>
+
+  <div class="field col-12 md:col-6">
+    <label for="type">Type</label>
+    <p-select
+      inputId="type"
+      formControlName="type"
+      [options]="typeOptions"
+      optionLabel="label"
+      optionValue="value"
+      [invalid]="isInvalid('type')"
+      placeholder="Select type"
+      [appendTo]="'body'"
+      class="w-full"
+    ></p-select>
+    <small class="p-error" *ngIf="isInvalid('type')">{{ controlError('type') }}</small>
+  </div>
+
+  <div class="field col-12 md:col-6">
+    <label for="amount">Amount</label>
+    <p-inputnumber
+      inputId="amount"
+      formControlName="amount"
+      mode="decimal"
+      [useGrouping]="false"
+      [min]="0.01"
+      [maxFractionDigits]="2"
+      [inputStyle]="{ width: '100%' }"
+      [invalid]="isInvalid('amount')"
+    ></p-inputnumber>
+    <small class="p-error" *ngIf="isInvalid('amount')">{{ controlError('amount') }}</small>
+  </div>
+
+  <div class="field col-12 md:col-6" *ngIf="showPrice">
+    <label for="price">Price</label>
+    <p-inputnumber
+      inputId="price"
+      formControlName="price"
+      mode="decimal"
+      [useGrouping]="false"
+      [min]="0.00001"
+      [maxFractionDigits]="5"
+      [inputStyle]="{ width: '100%' }"
+      [invalid]="isInvalid('price')"
+    ></p-inputnumber>
+    <small class="p-error" *ngIf="isInvalid('price')">{{ controlError('price') }}</small>
+  </div>
+
+  <!-- <div class="col-12">
+    <small class="hint" *ngIf="!showPrice">
+      Market order selected. Price will be sent as <strong>null</strong>.
+    </small>
+  </div> -->
+
+  <div class="col-12 form-actions">
+    <button
+      pButton
+      type="button"
+      label="Cancel"
+      severity="secondary"
+      icon="pi pi-times"
+      (click)="cancel()"
+    ></button>
+    <button pButton type="submit" label="Submit Trade" icon="pi pi-check" [loading]="submitting"></button>
+  </div>
+</form>
